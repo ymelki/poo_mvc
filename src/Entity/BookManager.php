@@ -54,8 +54,8 @@ class BookManager {
         // qui nous permet d'avoir un format de donnée sous forme de tableau
         // associatif
         $statement->execute();
-        $livre = $statement->fetch(PDO::FETCH_CLASS,"Book");
-    
+        $livre = $statement->setFetchMode(PDO::FETCH_CLASS,"Book");
+        $livre=  $statement->fetch();
 
         return $livre;
     }

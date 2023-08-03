@@ -12,7 +12,7 @@ class BookController {
 
     function getBooks(){
         // get data from Model 
-        $this->bookManager->getBooksEntity();
+        $books=$this->bookManager->getBooksEntity();
         // display template
         include_once __DIR__.'/../../templates/books.php';
     }
@@ -20,7 +20,7 @@ class BookController {
     function getBook(){
         // get paramater ID from URL
         $id=$_GET['id'];
-        $this->bookManager->getBookEntity($id);
+        $book=$this->bookManager->getBookEntity($id);
         include_once __DIR__.'/../../templates/book.php';
 
 
