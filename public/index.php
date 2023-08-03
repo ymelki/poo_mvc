@@ -37,3 +37,18 @@ if ($_SERVER['PATH_INFO']=="/deletebook"){
     $bookcontroller=new BookController();
     $bookcontroller->deleteBook();
 }
+
+
+if ($_SERVER['PATH_INFO']=="/insertbook"){
+    include __DIR__.'/../src/Controller/BookController.php';
+    echo "books";
+    $bookcontroller=new BookController();
+    $bookcontroller->insertBook();
+}
+if ($_SERVER['PATH_INFO']=="/savebook"){
+    include __DIR__.'/../src/Controller/BookController.php';
+    echo "books";
+    $bookcontroller=new BookController();
+    $bookcontroller->saveBook();
+}
+

@@ -76,13 +76,15 @@ class BookManager {
         $unlivre = $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    function insert_book_entity($titre){
-
+ 
+    
+    function saveBook(  Book $book      ){
+       
         $query="INSERT INTO livre (titre) VALUES (:titre)";
 
         // on va preparer la requete
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue(':titre', $titre);
+        $statement->bindValue(':titre', $book->getTitre());
         
         // On utilise statement qui a une méthode (sa propre fonction) permettant
         // de récupérer les données. On utilise le parametre PDO::FETCH_ASSOC
@@ -90,6 +92,7 @@ class BookManager {
         // associatif
         $statement->execute();
         
+ 
     }
 
 }

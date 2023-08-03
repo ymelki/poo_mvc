@@ -27,9 +27,7 @@ class BookController {
         
     }
 
-    function insertBook(){
-        
-    }
+
 
     function updateBook(){
         
@@ -37,6 +35,28 @@ class BookController {
 
     function deleteBook(){
         
+    }
+    function insertBook(){
+        // display form  to create a book
+        include __DIR__.'/../../templates/form_book.php';
+        
+    }
+    function saveBook(){
+
+
+        // 1 get data post
+        $title=$_POST['nom_livre'];
+        // 2 Object book with data
+        $book =new Book();
+        $book->setTitre($title);
+        // example
+        $book->setCategorie_id(2);
+        // 3. Model
+        $bookManager=new BookManager();
+        $bookManager->saveBook($book);
+
+        
+
     }
 
 }
